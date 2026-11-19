@@ -27,8 +27,10 @@
 body { margin: 0; background: var(--bg); color: var(--text);
   font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 16px 48px; }
-h1 { font: 600 1.7rem/1.2 Georgia, "Times New Roman", serif; margin: 0 0 4px; }
-.sub { color: var(--muted); margin: 0 0 20px; }
+/* title with the subtitle on its right (wraps below it when there's no room) */
+.top { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 16px; row-gap: 4px; margin: 0 0 16px; }
+h1 { font: 600 1.7rem/1.2 Georgia, "Times New Roman", serif; margin: 0; }
+.sub { color: var(--muted); margin: 0; }
 .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
   position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 10px 0; border-bottom: 1px solid var(--line); }
 .controls input[type=search], .controls select, .controls input[type=date], .controls button {
@@ -131,8 +133,10 @@ td.title a:hover { color: var(--accent); text-decoration: underline; }
 </head>
 <body>
 <div class="wrap">
-  <h1>London Public Lectures</h1>
-  <p class="sub">Public talks and events from London institutions, many of them free · 661 events · updated Thu 19 Nov 2026, 14:03</p>
+  <header class="top">
+    <h1>London Public Lectures</h1>
+    <p class="sub">Public talks and events, many of them free · 661 events · updated Thu 19 Nov 2026, 14:10</p>
+  </header>
   <details class="about" id="about">
     <summary>About</summary>
     <div class="about-body">
@@ -140,7 +144,7 @@ td.title a:hover { color: var(--accent); text-decoration: underline; }
   Text of the "About" box on the events page. Edit freely, save, then re-run:
       ..\.venv\Scripts\python run.py
   It's HTML: <p> = paragraph, <h2> = heading, <ul><li> = bullet list, <b> = bold.
-  Thu 19 Nov 2026, 14:03 is replaced with the date/time of the last update.
+  Thu 19 Nov 2026, 14:10 is replaced with the date/time of the last update.
   The institutions list at the end is filled in automatically from sources.yaml -
   keep the <ul id="about-sources"></ul> line.
 -->
